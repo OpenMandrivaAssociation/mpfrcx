@@ -1,11 +1,11 @@
-%define libmajor	0
+%define libmajor	1
 %define libname		%mklibname %{name} %{libmajor}
 %define libname_devel	%mklibname %{name} -d
 
 Summary:	Arithmetic of univariate polynomials over arbitrary precision real (Mpfr) or complex (Mpc) numbers
 Name:		mpfrcx
-Version:	0.2
-Release:	%mkrel 3
+Version:	0.3.1
+Release:	%mkrel 1
 License:	LGPLv2+
 Group:		System/Libraries
 URL:		http://www.http://www.multiprecision.org/%{name}
@@ -51,14 +51,14 @@ Development headers and libraries for MPFRCX.
 %setup -q
 
 %build
-autoreconf
-%configure			\
+%configure2_5x			\
 	--enable-shared		\
 	--disable-static
 
 %make
 
 %install
+rm -fr %buildroot
 %makeinstall_std
 mkdir -p %{buildroot}%{_docdir}/%{name}
 install -m 0644 AUTHORS NEWS README TODO %{buildroot}%{_docdir}/%{name}
