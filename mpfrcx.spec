@@ -5,7 +5,7 @@
 Summary:	Arithmetic of univariate polynomials over arbitrary precision real (Mpfr) or complex (Mpc) numbers
 Name:		mpfrcx
 Version:	0.3.1
-Release:	%mkrel 2
+Release:	%mkrel 3
 License:	LGPLv2+
 Group:		System/Libraries
 URL:		http://www.multiprecision.org/%{name}
