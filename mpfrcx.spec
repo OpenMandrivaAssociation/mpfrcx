@@ -5,7 +5,7 @@
 Summary:	Arithmetic of univariate polynomials over arbitrary precision real (Mpfr) or complex (Mpc) numbers
 Name:		mpfrcx
 Version:	0.3.1
-Release:	%mkrel 3
+Release:	%mkrel 4
 License:	LGPLv2+
 Group:		System/Libraries
 URL:		http://www.multiprecision.org/%{name}
@@ -62,6 +62,7 @@ rm -fr %buildroot
 %makeinstall_std
 mkdir -p %{buildroot}%{_docdir}/%{name}
 install -m 0644 AUTHORS NEWS README TODO %{buildroot}%{_docdir}/%{name}
+rm -f %{buildroot}%{_libdir}/libmpfrcx.la
 
 %check
 make check
@@ -79,5 +80,4 @@ make check
 %defattr(-,root,root)
 %{_includedir}/mpfrcx.h
 %{_infodir}/mpfrcx.info*
-%{_libdir}/libmpfrcx.la 
 %{_libdir}/libmpfrcx.so
