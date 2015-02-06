@@ -5,7 +5,7 @@
 Summary:	Arithmetic of univariate polynomials
 Name:		mpfrcx
 Version:	0.4.1
-Release:	1
+Release:	2
 License:	LGPLv2+
 Group:		System/Libraries
 URL:		http://www.multiprecision.org/%{name}
