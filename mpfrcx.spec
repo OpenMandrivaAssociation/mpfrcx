@@ -4,14 +4,14 @@
 
 Summary:	Arithmetic of univariate polynomials
 Name:		mpfrcx
-Version:	0.4.1
-Release:	2
+Version:	0.6.3
+Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
 URL:		http://www.multiprecision.org/%{name}
-Source0:	http://www.multiprecision.org/mpfrcx/download/%{name}-%{version}.tar.gz
-BuildRequires:	gmp-devel
-BuildRequires:	mpfr-devel
+Source0:	http://www.multiprecision.org/downloads/%{name}-%{version}.tar.gz
+BuildRequires:	pkgconfig(gmp)
+BuildRequires:	pkgconfig(mpfr)
 BuildRequires:	libmpc-devel
 
 %description
@@ -45,17 +45,14 @@ Provides:	%{name}-devel = %{version}-%{release}
 Development headers and libraries for MPFRCX.
 
 %prep
-%setup -q
+%autosetup -p1
+%configure
 
 %build
-%configure2_5x			\
-	--enable-shared		\
-	--disable-static
-
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %check
 make check
@@ -64,7 +61,7 @@ make check
 %{_libdir}/libmpfrcx.so.%{libmajor}*
 
 %files -n %{libname_devel}
-%doc AUTHORS NEWS README TODO
+%doc AUTHORS NEWS README
 %{_includedir}/mpfrcx.h
 %{_infodir}/mpfrcx.info*
 %{_libdir}/libmpfrcx.so
