@@ -8,7 +8,7 @@ Version:	0.6.3
 Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
-URL:		http://www.multiprecision.org/%{name}
+URL:		https://www.multiprecision.org/%{name}
 Source0:	http://www.multiprecision.org/downloads/%{name}-%{version}.tar.gz
 BuildRequires:	pkgconfig(gmp)
 BuildRequires:	pkgconfig(mpfr)
